@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a new shwo</title>
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <p><a href="/">Go Back</a></p>
+        <h1>Add a new show</h1>
+
+        <form action="/add_show" method='post'>
+            {% csrf_token %}
+            <p><label for="show_title">TItle</label></p>
+            <input type="text" id="title" name="title">
+
+            <p><label for="network">Network</label></p>
+            <input type="text" id="network" name="network">
+
+            <p><label for="release">Release Date</label></p>
+            <input type="date" id="release" name="release">
+
+            <p><label for="desc">Description</label></p>
+            <input type="text" id="desc" name="desc">
+            <br>
+            <br>
+            <p><button type="submit">Add</button></p>
+        </form>
+
+    </div>
+</body>
+</html>

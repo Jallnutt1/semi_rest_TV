@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    width: 960px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: lightblue;
+    border: 2px solid lightcoral;
+    border-radius: 10px;
+    /* color: white; */
+}
+table{
+    margin: 30px;
+}
