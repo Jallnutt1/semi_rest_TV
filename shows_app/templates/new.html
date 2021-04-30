@@ -10,12 +10,21 @@
 </head>
 <body>
     <div id="wrapper">
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{message}} </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
         <p><a href="/">Go Back</a></p>
         <h1>Add a new show</h1>
 
-        <form action="/add_show" method='post'>
+        <form action="/shows/new" method='post'>
             {% csrf_token %}
-            <p><label for="show_title">TItle</label></p>
+            <p><label for="show_title">Title</label></p>
             <input type="text" id="title" name="title">
 
             <p><label for="network">Network</label></p>
